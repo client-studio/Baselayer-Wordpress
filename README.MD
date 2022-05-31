@@ -1,4 +1,4 @@
-# Tailwind Wordpress boilerplate
+# Tailwind Wordpress boilerplate (v2)
 
 Made by Client•Studio http://client.studio/
 
