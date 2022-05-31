@@ -1,8 +1,8 @@
 # Tailwind Wordpress boilerplate
 
-Made by http://client.studio/
+Made by Client•Studio http://client.studio/
 
-Get started http://client.style/
+View developer docs at Client•Style http://client.style/
 
 Based on Tailpress theme https://github.com/jeffreyvr/tailpress
 
