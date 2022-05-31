@@ -7,17 +7,16 @@
 
 	<?php wp_head(); ?>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-black">
 	<div class="md:flex min-h-screen">
-		<div class="w-full md:w-1/2 flex items-center justify-center">
-			<div class="max-w-sm m-8">
-				<div class="text-5xl md:text-15xl text-gray-800 border-primary border-b">404</div>
-				<div class="w-16 h-1 bg-purple-light my-3 md:my-6"></div>
-				<p class="text-gray-800 text-2xl md:text-3xl font-light mb-8"><?php _e( 'Sorry, the page you are looking for could not be found.', 'tailpress' ); ?></p>
-				<a href="<?php echo get_bloginfo( 'url' ); ?>" class="bg-primary px-4 py-2 rounded text-white">
-					<?php _e( 'Go Home', 'tailpress' ); ?>
+		<div class="w-full md:w-1/2 md:mx-auto flex items-center justify-center">
+			<article class="m-8 text-center">
+				<div class="text-white text-5xl md:text-8xl mb-3">404</div>
+				<p class="text-gray-100 text-2xl mb-8"><?php _e( 'Sorry, this page or content is missing.', 'client' ); ?></p>
+				<a href="<?php echo get_bloginfo( 'url' ); ?>" class="btn">
+					<?php _e( 'Return home', 'client' ); ?>
 				</a>
-			</div>
+			</article>
 		</div>
 	</div>
 </body>
