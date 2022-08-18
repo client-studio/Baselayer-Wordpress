@@ -1,4 +1,4 @@
-# Tailwind Wordpress boilerplate (v2)
+# Baselayer for Wordpress
 
 Made by Client•Studio http://client.studio/
 
