@@ -4,7 +4,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 html {
-    scroll-behavior: smooth !important;
+    @apply scroll-smooth
 }
 ::selection {
   @apply bg-black text-white
@@ -21,13 +21,10 @@ html {
 
 /* lazy load smoothen */
 img[data-lazy-src] {
-   opacity: 0;
+   @apply opacity-0 scale-110
 }
 img.lazyloaded {
-   -webkit-transition: opacity .5s linear 0.25s;
-       -moz-transition: opacity .5s linear 0.25s;
-          transition: opacity .5s linear 0.25s;
-   opacity: 1;
+   @apply opacity-100 scale-100 transform-gpu transition-all duration-700 ease-in-out transform;
 }
 
 body.admin-bar .main-header { @apply top-12 lg:top-8 }
@@ -35,11 +32,6 @@ body.admin-bar .main-header { @apply top-12 lg:top-8 }
 .debug { background: #ff0000;}
 
 .site-container { @apply max-w-screen-2xl px-8 sm:px-12 lg:px-24 xl:px-32 mx-auto }
-
-article > *:not(.entry-content),
-.entry-content > * {
-    @apply mx-auto max-w-content;
-}
 
 .entry-content, .block-editor-block-list__layout, article {
     h1, h1 p {
@@ -83,6 +75,15 @@ article > *:not(.entry-content),
     }
 }
 
+@media (max-width: 767px) {
+		/* break long words */
+		article h1 {
+			overflow-wrap: break-word;
+			hyphens: auto;
+		}
+
+}
+
 .btn {
    @apply whitespace-nowrap overflow-hidden px-10 py-5 w-fit border border-transparent text-sm rounded-full shadow-sm bg-black text-white hover:shadow transition-colors duration-500 font-medium;
 
@@ -109,7 +110,7 @@ article > *:not(.entry-content),
 
 .wpcf7-response-output {
   z-index: 9999;
-  @apply fixed m-0 bottom-5 -left-2 md:left-auto md:right-5 w-full text-center border-0 rounded md:px-6 md:w-1/2 animate-pulse
+  @apply fixed m-0 bottom-5 -left-2 md:left-auto md:right-5 w-full text-center border-0 rounded md:px-6 md:w-1/2 animate-pulse py-2
 }
 
 .invalid .wpcf7-response-output { @apply border-0 bg-yellow-500 border-yellow-500 }
@@ -117,12 +118,16 @@ article > *:not(.entry-content),
 
 .wpcf7-not-valid-tip { @apply text-xs }
 
-/* Wider cookie box */
 #cookie-law-info-bar {
-   @apply rounded-lg;
-   width: 100% !important;
+  @apply w-full backdrop-blur-lg shadow rounded-sm !bg-black/60
 }
 
-@media (min-width:767px) {
-  #cookie-law-info-bar { width: 500px !important; }
+@media (min-width: 767px) {
+  #cookie-law-info-bar { width: 560px !important; left: auto !important; }
+}
+
+#cookie-law-info-bar .cli-bar-message { @apply leading-relaxed}
+#cookie-law-info-bar .cli_settings_button,
+#cookie-law-info-bar .cli_action_button {
+  @apply text-base font-medium rounded-sm px-6
 }
