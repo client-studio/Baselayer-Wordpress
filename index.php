@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container mx-auto my-8">
+<div class="site-container my-8">
 
 	<?php if ( have_posts() ) : ?>
 		<?php
@@ -8,7 +8,11 @@
 			the_post();
 			?>
 
-			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+			<article class="lead text-white text-center">
+			 <?php the_content(); ?>
+			</article>
+
+			<?php get_template_part( 'page', 'modules' ); ?>
 
 		<?php endwhile; ?>
 

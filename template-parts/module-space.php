@@ -1,2 +1,1 @@
-<div class="my-12">
-</div>
+<div class="my-12"></div>

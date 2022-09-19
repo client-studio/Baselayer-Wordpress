@@ -14,7 +14,7 @@ get_header(); ?>
      }
    ?>
 
-		 <div class="relative bg-black">
+		 <div class="relative bg-black hero">
 			 <div class="w-100">
 				 <div class="relative sm:overflow-hidden">
 					 <?php if ( has_post_thumbnail() ) { ?>

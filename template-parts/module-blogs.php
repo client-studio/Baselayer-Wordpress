@@ -1,4 +1,4 @@
-<div class="py-10 site-container">
+<div class="py-10 site-container module-news">
 
 		<article class="py-4">
 		<h2 class="text-3xl">News</h2>

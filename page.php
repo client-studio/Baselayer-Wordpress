@@ -14,7 +14,7 @@ get_header(); ?>
      }
    ?>
 
-		 <div class="relative bg-black">
+		 <div class="relative bg-black hero">
 			 <div class="w-100">
 				 <div class="relative sm:overflow-hidden">
 					 <?php if ( has_post_thumbnail() ) { ?>
@@ -23,7 +23,7 @@ get_header(); ?>
 						 <div class="absolute inset-0 opacity-50 bg-gradient-to-b from-black to-dark mix-blend-multiply"></div>
 					 </div>
 					 <?php } ?>
-					 <div class="relative px-4 sm:px-6 py-32 lg:py-36 lg:px-8 max-w-4xl mx-auto">
+					  <div class="site-container py-32 lg:py-36">
 
 						 <article class="lead text-white text-center">
 						 	<?php the_content(); ?>

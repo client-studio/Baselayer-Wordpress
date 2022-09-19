@@ -1,6 +1,6 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
 
-<div class="site-container py-16 lg:py-24">
+<div class="site-container py-16 lg:py-24 module-faq">
 
       <article>
         <h2><?php the_sub_field('title'); ?></h2>

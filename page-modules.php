@@ -1,5 +1,5 @@
 <?php if( !post_password_required( $post )): ?>
-  
+
 <?php // get ACF modules using flexible content ?>
 <?php if( have_rows('modules') ): while ( have_rows('modules') ) : the_row(); ?>
 
@@ -45,6 +45,12 @@
       <?php get_template_part( 'template-parts/module', 'space' ); ?>
 
   <?php endif; ?>
+
+  <?php if( get_row_layout() == 'stack' ): ?>
+
+     <?php get_template_part( 'template-parts/module', 'stack' ); ?>
+
+ <?php endif; ?>
 
 
 

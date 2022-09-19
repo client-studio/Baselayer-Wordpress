@@ -1,4 +1,4 @@
-<div class="slides relative md:snap-y min-h-screen">
+<div class="slides relative md:snap-y min-h-screen module-stack">
   <?php $j = 1; ?>
    <?php if( have_rows('repeater') ): ?>
    <?php while( have_rows('repeater') ): the_row(); ?>
