@@ -21,7 +21,7 @@
 
 	<header class="bg-white sticky top-0 z-50 main-header">
 
-		<div class="mx-auto container">
+		<div class="mx-auto site-container">
 			<div class="lg:flex lg:justify-between lg:items-center py-6">
 				<div class="flex justify-between items-center">
 					<div>

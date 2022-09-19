@@ -35,7 +35,7 @@ body.admin-bar .main-header { @apply top-12 lg:top-8 }
 
 .entry-content, .block-editor-block-list__layout, article {
     h1, h1 p {
-        @apply text-3xl lg:text-5xl font-bold mb-4;
+        @apply text-4xl lg:text-7xl font-bold mb-4;
     }
 
     h2, h2 p {
@@ -75,6 +75,8 @@ body.admin-bar .main-header { @apply top-12 lg:top-8 }
     }
 }
 
+.lead p { @apply font-medium }
+
 @media (max-width: 767px) {
 		/* break long words */
 		article h1 {
@@ -88,15 +90,11 @@ body.admin-bar .main-header { @apply top-12 lg:top-8 }
    @apply whitespace-nowrap overflow-hidden px-10 py-5 w-fit border border-transparent text-sm rounded-full shadow-sm bg-black text-white hover:shadow transition-colors duration-500 font-medium;
 
    &.btn-invert {
-      @apply bg-black !text-white hover:border-white;
-   }
-
-   &.btn-invert-outline {
-      @apply bg-white !text-dark border-black hover:border-black/50;
+      @apply bg-white !text-black;
    }
 
    &.btn-outline {
-      @apply bg-dark border-white !text-white hover:bg-white hover:!text-black hover:border-white/70;
+      @apply bg-transparent border-white !text-white hover:bg-white hover:!text-black;
    }
 }
 
