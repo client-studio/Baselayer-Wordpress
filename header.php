@@ -25,8 +25,8 @@
 			<div class="lg:flex lg:justify-between lg:items-center py-6">
 				<div class="flex justify-between items-center">
 					<div>
-								<a href="<?php echo get_bloginfo( 'url' ); ?>" class="logo">
-									<img class="h-5 w-auto" src="<?php bloginfo( 'template_directory' ); ?>/img/logo2.svg" alt="<?php echo get_bloginfo( 'name' );?>">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
+									<img class="h-5 w-auto" src="<?php echo esc_url( get_template_directory_uri() ) ?>/img/logo2.svg" alt="<?php echo get_bloginfo( 'name' );?>">
 								</a>
 					</div>
 

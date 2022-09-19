@@ -14,7 +14,9 @@
     <div class="grid grid-cols-2 md:grid-cols-5 xl:gap-8">
 
       <div class="space-y-8 col-span-2 foot-col mb-16">
-        <img class="h-5 w-auto" src="<?php bloginfo( 'template_directory' ); ?>/img/logo.svg" alt="<?php echo get_bloginfo( 'name' );?>">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer-logo">
+        <img class="h-5 w-auto" src="<?php echo esc_url( get_template_directory_uri() ) ?>/img/logo.svg" alt="<?php echo get_bloginfo( 'name' );?>">
+				</a>
 				<div class="md:w-3/4">
 					<div class="text-gray-500 text-sm">
 

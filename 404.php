@@ -13,7 +13,7 @@
 			<article class="m-8 text-center">
 				<div class="text-white text-5xl md:text-8xl mb-3">404</div>
 				<p class="text-gray-100 text-2xl mb-10"><?php _e( 'Sorry, this page or content is missing.', 'client' ); ?></p>
-				<a href="<?php echo get_bloginfo( 'url' ); ?>" class="btn btn-outline">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn-outline">
 					<?php _e( 'Return home', 'client' ); ?>
 				</a>
 			</article>
