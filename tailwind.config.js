@@ -1,7 +1,7 @@
-const _ = require("lodash");
 const theme = require('./theme.json');
 const tailpress = require("@jeffreyvr/tailwindcss-tailpress");
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
         './*.php',
