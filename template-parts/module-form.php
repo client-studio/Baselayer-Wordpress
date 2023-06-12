@@ -1,9 +1,7 @@
-<div class="bg-light module-form">
-	<div class="site-container relative py-8 lg:py-16">
+<div class="module-form">
+   <div class="site-container py-10">
 
-		<div><article><?php the_field('form', 'option'); ?></article></div>
+   <?php echo do_shortcode('[contact-form-7 id="5" title="Contact form"]'); ?>
 
-		<?php echo do_shortcode( '[contact-form-7 id="5" title="Contact form"]' ); ?>
-
-	</div>
+   </div>
 </div>

@@ -1,23 +1,31 @@
+
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
 
-<div class="site-container py-16 lg:py-24 module-faq">
+<div class="module-faq site-container mb-16">
 
-      <article>
-        <h2><?php the_sub_field('title'); ?></h2>
+      <?php if( get_sub_field('faq_title') ): ?>
+      <article class="mb-8">
+        <?php the_sub_field('faq_title'); ?>
       </article>
-
+      <?php endif; ?>
+      
         <?php $i = 0; ?>
         <?php if( have_rows('repeater') ): ?>
-        <div class="faq flex-grow w-full lg:px-5 lg:pl-28">
+        <div class="faq flex-grow w-full">
             <ul class="list-none" x-data="{selected:null}">
                 <?php while( have_rows('repeater') ): the_row(); ?>
 
-                          <li class="mb-5">
-                              <h3 class="border-b cursor-pointer border-gray-300 py-3 text-xl hover:text-primary" @click="selected !== <?php echo $i ?> ? selected = <?php echo $i ?> : selected = null">
-                                <?php the_sub_field('question'); ?></h3>
-                                <article x-show="selected == <?php echo $i ?>" class="py-4 text-gray-700">
+                          <li class="mb-5 bg-white shadow-sm rounded-xl px-5">
+                              <article class="flex justify-between justify-center w-full h-full cursor-pointer pb-2 pt-5 group" @click="selected !== <?php echo $i ?> ? selected = <?php echo $i ?> : selected = null">
+                              <h3 class="faq-h3"><?php the_sub_field('question'); ?></h3> 
+                               
+                               <div class="group-hover:opacity-100 opacity-50 text-3xl">+</div>
+                              
+                              </article>
+                              
+                              <article x-show="selected == <?php echo $i ?>" class="py-6 lead max-w-4xl text-text">
                                       <?php the_sub_field('answer'); ?>
-                                </article>
+                              </article>
                           </li>
 
                 <?php $i++; endwhile; ?>

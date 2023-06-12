@@ -10,22 +10,32 @@
         {
           "name": "Primary",
           "slug": "primary",
-          "color": "#0EA5E9"
+          "color": "#01266C"
         },
         {
           "name": "Secondary",
           "slug": "secondary",
-          "color": "#14B8A6"
+          "color": "#FECD0A"
         },
         {
           "name": "Dark",
           "slug": "dark",
-          "color": "#1F2937"
+          "color": "#181818"
         },
         {
           "name": "Light",
           "slug": "light",
-          "color": "#F9FAFB"
+          "color": "#F3EEE5"
+        },
+        {
+           "name": "Body",
+           "slug": "body",
+           "color": "#fcfcfc"
+        },
+        {
+           "name": "Text",
+           "slug": "text",
+           "color": "#777673"
         }
       ]
     },
@@ -65,3 +75,4 @@
     }
   }
 }
+

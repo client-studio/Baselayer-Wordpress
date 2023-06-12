@@ -6,18 +6,17 @@ get_header(); ?>
 
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
+<div class="site-container">
 
-    <div class="site-container py-24">
+   <div class="relative max-w-4xl mx-auto py-20">
+      <article class="single-content">
+         <?php the_content(); ?>
+      </article>
+   </div>
 
-          <article>
-            <?php the_content(); ?>
-          </article>
-
-    </div>
+</div>
 
 
 <?php get_template_part( 'page', 'modules' ); ?>
-
 <?php endwhile; endif; ?>
-
 <?php get_footer(); ?>

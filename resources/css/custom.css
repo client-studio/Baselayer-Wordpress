@@ -1,146 +1,261 @@
-/* client theme v2.2 (11/22) */
+/* client theme v1.2 (1322) */
+
+
+/* -------------------------------- 
+     SETUP                         
+   -------------------------------- */
+
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-html {
-    @apply scroll-smooth
-}
-::selection {
-  @apply bg-primary text-white
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-/* lazy load */
-img[data-lazy-src] {
-   @apply opacity-0 scale-110
+html {
+   @apply lg:scroll-smooth;
 }
-img.lazyloaded {
-   @apply opacity-100 scale-100 transform-gpu transition-all duration-700 ease-in-out transform;
+
+::selection {
+   @apply bg-black text-white
 }
 
 body.admin-bar .main-header { @apply top-12 lg:top-8 }
 
 .debug { background: #ff0000;}
 
-.site-container { @apply max-w-screen-2xl px-8 sm:px-12 lg:px-24 xl:px-32 mx-auto }
 
-h1, h1 p {
-  @apply text-4xl lg:text-7xl font-bold mb-4;
+/* -------------------------------- 
+     TEXT                         
+   -------------------------------- */
+
+
+article {
+   p, ul, ol {
+      @apply mb-4 text-base;
+   }
+
+   h1, h1 p {
+      @apply text-4xl md:text-5xl lg:text-6xl mb-5;
+   }
+
+   h2, h2 p {
+      @apply text-2xl md:text-3xl lg:text-4xl mb-4;
+   }
+
+   h3, h3 p {
+      @apply text-xl md:text-2xl lg:text-3xl mb-3;
+   }
+
+   h4, h4 p {
+      @apply text-lg md:text-xl mb-3;
+   }
+
+   li {
+      @apply mb-4 list-disc list-inside;
+   }
+
+   p, h1, h2, h3, h4, ul {
+      @apply last:mb-0;
+   }
 }
 
-h2, h2 p {
-    @apply text-2xl lg:text-3xl font-bold mb-3;
+article.lead { 
+   p {
+      @apply text-lg font-medium;
+   }
 }
 
-h3, h3 p {
-    @apply text-xl lg:text-2xl font-bold mb-2;
+article.single-content {
+   h1, h1 p {
+      @apply text-2xl md:text-3xl lg:text-4xl;
+   }
+
+   h2, h2 p {
+      @apply text-xl md:text-2xl lg:text-3xl;
+   }
+
+   h3, h3 p, h4, h4 p {
+      @apply text-lg md:text-xl;
+   }
+
+   li {
+      @apply px-12;
+   }
 }
 
-h4, h4 p {
-    @apply font-normal text-2xl !leading-snug mb-4;
+
+/* -------------------------------- 
+     CONTENT                         
+   -------------------------------- */
+
+
+.site-container { 
+   @apply max-w-7xl px-4 sm:px-6 mx-auto relative;
 }
 
-p, ul, ol {
-    @apply text-base mb-4;
-}
-
-a {
-    @apply no-underline;
-}
-
-.entry-content, .block-editor-block-list__layout, article {
-    h1, h1 p {
-        @apply mb-5;
-    }
-
-    h2, h2 p {
-        @apply mb-4;
-    }
-
-    h3, h3 p {
-        @apply mb-3;
-    }
-
-    p, ul, ol {
-
-        @apply mb-5;
-
-        a {
-            @apply underline hover:no-underline;
-        }
-    }
-
-    ul:not(.block-editor-block-variation-picker__variations) {
-        li {
-            @apply list-disc list-inside;
-        }
-    }
-
-    ol {
-        li {
-            @apply list-decimal list-inside;
-        }
-    }
-}
-
-.lead p { @apply font-medium }
-
-@media (max-width: 767px) {
-		/* break long words */
-		article h1 {
-			overflow-wrap: break-word;
-			hyphens: auto;
-		}
-
+.full-container { 
+   @apply max-w-[1920px] mx-auto relative;
 }
 
 .btn {
-   @apply whitespace-nowrap overflow-hidden px-10 py-5 w-fit border border-transparent text-sm rounded-full shadow-sm bg-black text-white hover:shadow transition-colors duration-500 font-medium;
+   @apply block whitespace-nowrap px-8 py-3 w-fit rounded-full anim bg-black text-white hover:shadow-lg;
 
-   &.btn-invert {
-      @apply bg-white !text-black;
-   }
-
-   &.btn-outline {
-      @apply bg-transparent border-light text-white;
+   &.btn-light {
+      @apply bg-white text-black;
    }
 }
 
-.icon-social { @apply text-gray-300 hover:text-gray-100 transition-colors duration-300 }
-
-.grecaptcha-badge { visibility: hidden; }
-
-/* forms */
-
-.wpcf7-text, .wpcf7-textarea, input[type=text]  {
-  @apply block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border border-gray-300  bg-gray-50 hover:bg-white focus:bg-white rounded-md p-3 mt-2 text-gray-900
+.social-icon {
+   @apply text-light h-8 w-8 mx-1 first:ml-0 last:mr-0;
 }
-.wpcf7-select { @apply block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border border-gray-300 bg-gray-50 hover:bg-white focus:bg-white rounded-md p-3 mt-2 text-gray-900  }
-.wpcf7-label { @apply block text-sm font-medium text-left text-gray-300 }
-.wpcf7-submit, input[type=submit] { @apply w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 }
+
+
+/* -------------------------------- 
+     NOTIFICATION BAR                         
+   -------------------------------- */
+
+
+.has-easy-notification-bar { 
+   .easy-notification-bar {
+      @apply bg-gradient-to-r from-green-400 via-green-500 to-purple-600 flex 
+   }
+
+   .easy-notification-bar-button { 
+      a {
+         @apply bg-transparent md:hover:underline;
+      } 
+   }
+}
+
+
+/* -------------------------------- 
+     COOKIES                         
+   -------------------------------- */
+
+#cookie-law-info-bar { @apply shadow-none }
+
+#cookie-law-info-bar[data-cli-type="widget"] {
+   @apply !w-full m-4 !w-auto md:m-0 md:!w-96 !max-w-full rounded-lg bottom-0 md:!bottom-6 !right-0 md:!right-6;
+}
+
+
+.cli-style-v2 { 
+   @apply pt-4;
+
+   .cli-bar-btn_container {
+      @apply pt-2;
+   }
+
+   a.cli_action_button, a.cli_settings_button { 
+      @apply font-medium rounded px-4 py-3;
+   }
+}
+
+.cli_manage_current_consent {
+   @apply underline
+}
+
+.grecaptcha-badge { 
+   visibility: hidden; 
+}
+
+
+/* -------------------------------- 
+     FORMS                         
+   -------------------------------- */
+
+
+.wpcf7 {
+   input, textarea {
+      @apply block w-full bg-gray-200 focus:bg-gray-50 focus:outline-black rounded-md p-4 mt-1;
+   }
+
+   p, ul {
+      @apply pb-4;
+   }
+
+   input[type=submit] {
+      @apply px-8 py-4 bg-primary text-white cursor-pointer;
+   }
+}
 
 .wpcf7-response-output {
-  z-index: 9999;
-  @apply fixed m-0 bottom-5 -left-2 md:left-auto md:right-5 w-full text-center border-0 rounded md:px-6 md:w-1/2 animate-pulse py-2
+   z-index: 9999;
+   @apply fixed m-0 bottom-5 -left-2 md:left-auto md:right-5 w-full text-center border-0 rounded md:px-6 md:w-1/2 animate-pulse
 }
 
-.invalid .wpcf7-response-output { @apply border-0 bg-yellow-500 border-yellow-500 }
-.sent .wpcf7-response-output { @apply border-0 bg-green-500 }
-
-.wpcf7-not-valid-tip { @apply text-xs }
-
-/* cookie banner */
-
-#cookie-law-info-bar {
-  @apply w-full shadow rounded-sm
+.wpcf7-not-valid-tip { 
+   @apply text-xs 
+}
+.invalid .wpcf7-response-output { 
+   @apply border-0 bg-yellow-500 border-yellow-500 
+}
+.sent .wpcf7-response-output { 
+   @apply border-0 bg-green-500 
 }
 
-@media (min-width: 767px) {
-  #cookie-law-info-bar { width: 560px !important; left: auto !important; }
+
+/* -------------------------------- 
+     EMBLA                         
+   -------------------------------- */
+
+
+
+
+/* -------------------------------- 
+     MISC.                         
+   -------------------------------- */
+
+
+.anim {
+   @apply transition-all duration-500;
 }
 
-#cookie-law-info-bar .cli-bar-message { @apply leading-relaxed}
-#cookie-law-info-bar .cli_settings_button,
-#cookie-law-info-bar .cli_action_button {
-  @apply text-base font-medium rounded-sm px-6
+#mobile-menu a {
+   @apply block w-full;
+}
+
+.current_page_item {
+   @apply opacity-50;
+}
+
+img[data-lazy-src] {
+   opacity: 0;
+}
+
+img.lazyloaded {
+   @apply transition-all duration-500 opacity-100;
+}
+
+.attachment svg { 
+   max-width:100%; height:auto
+}
+
+.pagination {
+   @apply site-container;
+   ul {
+      @apply flex -mx-3;
+      li {
+         @apply mx-3;
+      }
+   }
+}
+
+#breadcrumbs { 
+   a {
+      @apply lg:px-3 inline-block; 
+   }
+
+   span.breadcrumb_last {
+      @apply lg:pl-3 opacity-60;  
+   }
+}
+
+
+/* -------------------------------- 
+     CUSTOM                         
+   -------------------------------- */
+
+
+.custom {
+   @apply block;
 }

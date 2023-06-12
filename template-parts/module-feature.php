@@ -1,32 +1,34 @@
-<?php $invert = get_sub_field('invert'); ?>
-<div class="site-container py-6 module-feature">
+<div class="module-feature py-8">
+   <div class="site-container">
 
-   <div class="flex flex-col-reverse md:flex-row gap-6 md:gap-12 <?php if ($invert === true) : ?>md:flex-row-reverse<?php endif ?>">
+      <div class="grid md:grid-cols-2 items-center gap-x-8">
+         
+         <div class="module-feature__image<?php if ( get_sub_field( 'ltr' ) ): ?> md:order-2<?php endif ?>">
+            <?php $image = get_sub_field('image'); ?><?php if( $image ): ?>
+            <img src="<?php echo $image['sizes']['large']; ?>" class="w-full object-contain rounded-sm" />
+            <?php endif; ?>
+         </div>
 
-			<div class="content w-full md:w-1/2">
+         <div class="module-feature__text<?php if ( get_sub_field( 'ltr' ) ): ?> md:order-1<?php endif ?>">
+            <article>
+               <?php the_sub_field('text'); ?>
 
-				 <article class="lead">
-            <?php the_sub_field('text'); ?>
-         </article>
+               <?php $link = get_sub_field('button');
+               if( $link ):
+               $link_url = $link['url'];
+               $link_title = $link['title'];
+               $link_target = $link['target'] ? $link['target'] : '_self';
+               ?>
+               <a class="btn block mt-5" 
+                  href="<?php echo esc_url($link_url); ?>" 
+                  target="<?php echo esc_attr( $link_target ); ?>" >
+                  <?php echo esc_html($link_title); ?>
+               </a>
+               <?php endif; ?>
+            </article>
+         </div>
 
-				 <?php
-				 $link = get_sub_field('button');
-				 if( $link ):
-				 $link_url = $link['url'];
-				 $link_title = $link['title'];
-				 $link_target = $link['target'] ? $link['target'] : '_self';
-				 ?>
-         <a class="block mt-4 mb-10 btn" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr( $link_target ); ?>">
-            <?php echo esc_html($link_title); ?>
-         </a>
-				 <?php endif; ?>
-
-      </div>
-
-			<div class="image w-full md:w-1/2 mb-4 md:mb-0">
-         <?php $img = get_sub_field('image'); ?><?php if( $img ): ?>
-         <img src="<?php echo $img['sizes']['large']; ?>" class="w-full h-full object-contain rounded object-top" />
-         <?php endif; ?>
+        
       </div>
 
    </div>
