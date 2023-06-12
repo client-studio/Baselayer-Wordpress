@@ -1,26 +1,42 @@
 <?php get_header(); ?>
 
-<div class="site-container my-12">
+<div class="hero">
+   <div class="full-container">
 
-					<article class="text-center">
-					<h1><?php the_archive_title(); ?></h1>
-					<h5><?php the_archive_description(); ?></h5>
-					</article>
+      <div class="relative py-12">
+         <div class="site-container mt-12">
+            <article class="lead">
+               <h1><?php the_archive_title(); ?></h1>
+               <?php $desc = the_archive_description();
+               if ($desc) : ?>
+               <p><?php the_archive_description(); ?></p>
+               <?php endif; ?>
+            </article>
+         </div>
+      </div>
 
-					<div class="news-archive grid grid-cols-1 md:grid-cols-2 md:gap-x-10 pb-12">
-							<?php if ( have_posts() ) : ?> <?php while ( have_posts() ) : the_post(); ?>
+      <?php if ( have_posts() ) : ?> 
+      <div class="site-container py-10 mb-12">
+         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6">
+            <?php while ( have_posts() ) : the_post(); ?>
+            <div class="">
+               <?php get_template_part( 'loop' ); ?>
+            </div>
+            <?php endwhile; ?>
+         </div>
+      </div>
+      <?php endif; ?>
 
-									 <?php get_template_part( 'loop' ); ?>
+      <?php 
+      $prev_link = get_previous_posts_link(__('&laquo; Older'));
+      $next_link = get_next_posts_link(__('Newer &raquo;'));
+      if ($prev_link || $next_link) : ?>
+         <div class="pt-8 pb-4">
+            <?php client_pagination(); ?>
+         </div>
+      <?php endif; ?>
 
-							<?php endwhile; endif;	?>
-
-					</div>
-
-					<div class="mb-8">
-					  <?php client_pagination(); ?>
-					</div>
-
+   </div>
 </div>
 
-<?php
-get_footer();
+<?php get_footer();

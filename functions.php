@@ -23,7 +23,7 @@ function tailpress_setup() {
 		)
 	);
 
-  // add_theme_support( 'custom-logo' );
+    add_theme_support( 'custom-logo' );
 	add_theme_support( 'post-thumbnails' );
 
 	add_theme_support( 'align-wide' );
@@ -38,14 +38,30 @@ add_action( 'after_setup_theme', 'tailpress_setup' );
 /**
  * Enqueue theme assets.
  */
-function tailpress_enqueue_scripts() {
-	$theme = wp_get_theme();
+ function client_enqueue_scripts() {
+    $theme = wp_get_theme();
 
-	wp_enqueue_style( 'client', tailpress_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
-	wp_enqueue_script( 'client', tailpress_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
+    // Get the file modification time
+    $css_path = get_stylesheet_directory() . '/css/app.css';
+    $js_path = get_stylesheet_directory() . '/js/app.js';
+
+    if(file_exists($css_path)) {
+        $css_version = filemtime($css_path);
+    } else {
+        $css_version = $theme->get('Version');
+    }
+
+    if(file_exists($js_path)) {
+        $js_version = filemtime($js_path);
+    } else {
+        $js_version = $theme->get('Version');
+    }
+
+    wp_enqueue_style( 'tailpress', tailpress_asset( 'css/app.css' ), array(), $css_version );
+    wp_enqueue_script( 'tailpress', tailpress_asset( 'js/app.js' ), array(), $js_version );
 }
 
-add_action( 'wp_enqueue_scripts', 'tailpress_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'client_enqueue_scripts' );
 
 /**
  * Get asset path.
@@ -66,7 +82,7 @@ function tailpress_asset( $path ) {
  * Adds option 'li_class' to 'wp_nav_menu'.
  *
  * @param string  $classes String of classes.
- * @param mixed   $item The curren item.
+ * @param mixed   $item The current item.
  * @param WP_Term $args Holds the nav menu arguments.
  *
  * @return array
@@ -89,7 +105,7 @@ add_filter( 'nav_menu_css_class', 'tailpress_nav_menu_add_li_class', 10, 4 );
  * Adds option 'submenu_class' to 'wp_nav_menu'.
  *
  * @param string  $classes String of classes.
- * @param mixed   $item The curren item.
+ * @param mixed   $item The current item.
  * @param WP_Term $args Holds the nav menu arguments.
  *
  * @return array

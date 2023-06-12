@@ -1,21 +1,21 @@
-<div class="relative loop">
+<div class="blog-item relative w-full">
 
-<a href="<?php the_permalink(); ?>">
+   <a href="<?php the_permalink(); ?>">
+      <div class="h-60">
+         <img src="<?php the_post_thumbnail_url('thumbnail') ?>" 
+         class="w-full h-full object-cover rounded" alt="<?php the_title() ?>">
+      </div>
 
-<div class=" transition-all duration-700 ease-in-out transform md:hover:scale-95 duration-700 overflow-hidden hover:rounded-2xl">
-  <img src="<?php the_post_thumbnail_url('thumbnail') ?>" class="w-full rounded-sm h-full object-cover md:hover:scale-110 transition-all transform-gpu duration-700" alt="<?php the_title() ?>" loading="lazy">
-</div>
+      <div class="pt-3">
+         <article class="lead">
+            <time datetime="<?php the_date('d.m.Y'); ?>" class="text-sm">
+               <?php echo get_the_date('d.m.Y'); ?>
+            </time>
 
-<article class="relative pt-4">
+            <h3><?php the_title(); ?></h3>
+         </article>
+      </div>
 
-    <time datetime="<?php the_date('d.m.Y'); ?>">
-    <?php the_date('d.m.Y'); ?>
-    </time>
-
-    <h3 class="text-white pt-2"><?php the_title(); ?></h3>
-
-</article>
-
-</a>
+   </a>
 
 </div>
